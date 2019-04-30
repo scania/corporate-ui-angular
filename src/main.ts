@@ -3,6 +3,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { defineCustomElements } from 'corporate-ui-dev/dist/define';
 
 if (environment.production) {
   enableProdMode();
@@ -10,4 +11,6 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
+
+defineCustomElements(['c-header','c-theme']);
 
