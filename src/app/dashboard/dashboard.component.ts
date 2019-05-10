@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { defineCustomElements } from 'corporate-ui-dev/dist/define';
 
 
 @Component({

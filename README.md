@@ -1,6 +1,16 @@
 # CuiFour
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+To run Corporate UI in your Angular application, there are 2 steps you need to follow:
+1. Include `CUSTOM_ELEMENTS_SCHEMA` in the modules
+2. Call `defineCustomElement(['component_name'])` from the component class code (for example `app.component.ts`)
+3. Check on this link to see all available components
+
+## Styling
+To use Scania styling on your application, you need to add Scania theme using the `c-theme` component. How to use it:
+
+`<c-theme name="Scania" global="true"></c-theme>`
+
+If you set `global` attribute to true, it will add bootstrap 4 styling classes & javascript.
 
 ## Development server
 
