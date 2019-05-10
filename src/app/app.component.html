@@ -1,5 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <c-theme name='scania'></c-theme>
-<c-header site-name='Name' items='[{ "text": "dashboard", "href": "/dashboard" }, { "text": "info", "href": "/info" }]'></c-header>
-<router-outlet></router-outlet>
+
+<app-header></app-header>
+
+<c-content>
+  <router-outlet></router-outlet>
+</c-content>
+
+<c-footer>
+  <a href="/cookies" slot="items">Cookies</a>
+  <a href="/contact-us" slot="items">Contact us</a>
+</c-footer>
 

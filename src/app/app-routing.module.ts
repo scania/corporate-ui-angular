@@ -6,7 +6,9 @@ import { InfoComponent } from './info/info.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'info', component: InfoComponent }
+  { path: 'info', component: InfoComponent },
+  { path: '', component: DashboardComponent }
+
 
 ];
 

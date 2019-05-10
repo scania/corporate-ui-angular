@@ -1,0 +1,5 @@
+<c-header site-name='Trucks' items='[{ "text": "dashboard", "href": "/dashboard" }, { "text": "info", "href": "/info" }]'>
+  <c-navigation slot="navigation">
+    <a *ngFor='let truck of primary' href={{truck.href}} slot='primary-items'>{{truck.text}}</a>
+  </c-navigation>
+</c-header>
