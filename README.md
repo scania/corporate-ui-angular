@@ -1,37 +1,83 @@
 # CuiFour
 
-To run Corporate UI in your Angular application, there are 2 steps you need to follow:
-1. Include `CUSTOM_ELEMENTS_SCHEMA` in the modules
-2. Call `defineCustomElement(['component_name'])` from the component class code (for example `app.component.ts`)
-3. Check on this link to see all available components
+To run Corporate UI in your Angular application, there are few steps you need to follow:
+1. From the command line, install `corporate-ui-dev` package from NPM by doing `npm i corporate-ui-dev` in your project folder
+2. Include `CUSTOM_ELEMENTS_SCHEMA` in the modules
+3. In the component class code (for example `app.component.ts`), import `defineCustomElements` from corporate-ui-dev package, and call `defineCustomElements(['component_name'])` to load components.
+
+
+## Live example
+
+See the running example on [this link](https://yqniyqak.github.stackblitz.io).
+
+
+## Including Custom Elements Schema
+
+Include `CUSTOM_ELEMENTS_SCHEMA` in the module that will use the Corporate UI components. Here is an example how to include `CUSTOM_ELEMENTS_SCHEMA` in `app.module.ts`
+
+```js
+import { BrowserModule } from '@angular/platform-browser';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+
+## Call defineCustomElements
+
+To load the components, call `defineCustomElements` from the component class code. Here is an example to load the components from `app.component.ts`. The code below will load `c-theme, c-footer, and c-content`. For all available components, check [this link](https://static.scania.com/build/global/4.0.0-alpha.1/www/index.html). To import all components, pass an 'all' string instead (`defineCustomElements('all')`).
+
+```js
+import { Component, Injectable } from '@angular/core';
+import { defineCustomElements } from 'corporate-ui-dev/dist/define';
+
+defineCustomElements(['c-theme','c-footer', 'c-content']);
+// to import all components pass an 'all' value
+// defineCustomElements('all');
+
+@Injectable({
+  providedIn: 'root',
+})
+
+@Component({
+  selector: '#app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  title = 'cui-four';
+}
+
+```
+
+To be able to have Scania sticky footer, set the root selector to the html body. So, in the `index.html`, add id to the `body`, for example:
+```
+<body id="app-root"></body>
+```
+
 
 ## Styling
-To use Scania styling on your application, you need to add Scania theme using the `c-theme` component. How to use it:
+
+To use Scania styling on a project application, add Scania theme using the `c-theme` component. Add the code below in the angular root component template (for example in the `app.component.html`):
 
 `<c-theme name="Scania" global="true"></c-theme>`
 
-If you set `global` attribute to true, it will add bootstrap 4 styling classes & javascript.
+If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
