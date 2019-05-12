@@ -1,7 +1,7 @@
 import { Component, Injectable } from '@angular/core';
 import { defineCustomElements } from 'corporate-ui-dev/dist/define';
 
-defineCustomElements(['c-theme','c-footer','c-content']);
+defineCustomElements(['c-theme','c-footer','c-container','c-content']);
 
 @Injectable({
   providedIn: 'root',
