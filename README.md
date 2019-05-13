@@ -13,7 +13,7 @@ See the running example on [this link](https://yqniyqak.github.stackblitz.io).
 
 ## Including Custom Elements Schema
 
-Include `CUSTOM_ELEMENTS_SCHEMA` in the module that will use the Corporate UI components. Here is an example how to include `CUSTOM_ELEMENTS_SCHEMA` in `app.module.ts`
+Include `CUSTOM_ELEMENTS_SCHEMA` in the module that will use the Corporate UI components. This will tell Angular to allow web components and their attributes. Here is an example how to include `CUSTOM_ELEMENTS_SCHEMA` in `app.module.ts`
 
 ```js
 import { BrowserModule } from '@angular/platform-browser';
