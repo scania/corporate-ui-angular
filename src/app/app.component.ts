@@ -12,5 +12,5 @@ defineCustomElements(['c-theme','c-footer','c-container','c-content']);
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'cui-four';
+  title = 'angular-cui';
 }
