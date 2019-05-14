@@ -6,11 +6,6 @@ To run Corporate UI in your Angular application, there are few steps you need to
 3. In the component class code (for example `app.component.ts`), import `defineCustomElements` from corporate-ui-dev package, and call `defineCustomElements(['component_name'])` to load components.
 
 
-## Live example
-
-See the running example on [this link](https://helloimela.github.io/angular-cui/).
-
-
 ## Including Custom Elements Schema
 
 Include `CUSTOM_ELEMENTS_SCHEMA` in the module that will use the Corporate UI components. This will tell Angular to allow web components and their attributes. Here is an example how to include `CUSTOM_ELEMENTS_SCHEMA` in `app.module.ts`
@@ -79,5 +74,24 @@ To use Scania styling on a project application, add Scania theme using the `c-th
 
 If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
 
+
+## Live example
+
+See the running example on [this link](https://helloimela.github.io/angular-cui/).
+
+
+## How to run this project
+
+1. Clone the project
+2. Run `npm i` to install package dependencies
+3. Run `npm start`. 
+
+   The app will run in the development mode.<br>
+   Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
+
+4. `npm run build`
+
+   Builds the app for production to the `build` folder.<br>
+   Your app is ready to be deployed!
 
 
