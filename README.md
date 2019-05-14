@@ -1,4 +1,4 @@
-# CuiFour
+# Corporate UI in Angular application
 
 To run Corporate UI in your Angular application, there are few steps you need to follow:
 1. From the command line, install `corporate-ui-dev` package from NPM by doing `npm i corporate-ui-dev` in your project folder
@@ -8,7 +8,7 @@ To run Corporate UI in your Angular application, there are few steps you need to
 
 ## Live example
 
-See the running example on [this link](https://yqniyqak.github.stackblitz.io).
+See the running example on [this link](https://helloimela.github.io/angular-cui/).
 
 
 ## Including Custom Elements Schema
