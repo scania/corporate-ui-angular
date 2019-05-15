@@ -77,7 +77,7 @@ If the `global` attribute set to true, it will add bootstrap 4 styling classes &
 
 ## Live example
 
-See the running example on [this link](https://helloimela.github.io/angular-cui/).
+See the running example on [this link](https://scania.github.io/corporate-ui-angular/).
 
 
 ## How to run this project
