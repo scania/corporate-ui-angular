@@ -9,6 +9,7 @@ defineCustomElements(['c-theme','c-footer','c-container','c-content']);
 
 @Component({
   selector: '#app-root',
+  styleUrls : ['app.component.scss'],
   templateUrl: './app.component.html'
 })
 export class AppComponent {

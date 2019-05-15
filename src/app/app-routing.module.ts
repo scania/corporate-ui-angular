@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
-import { DetailComponent } from './detail/detail.component';
+import { ContactComponent } from './contact/contact.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'info', component: InfoComponent },
-  { path: 'detail/:id', component: DetailComponent },
-  { path: '', component: DashboardComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: '404', component: NotfoundComponent },
+  { path: '', component: HomeComponent },
+  { path: '**', redirectTo: '/404' }
 
 
 ];
