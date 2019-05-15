@@ -1,9 +1,15 @@
 # Corporate UI in Angular application
 
 To run Corporate UI in your Angular application, there are few steps you need to follow:
-1. From the command line, install `corporate-ui-dev` package from NPM by doing `npm i corporate-ui-dev` in your project folder
+1. Install `corporate-ui-dev` package from NPM in your project folder
 2. Include `CUSTOM_ELEMENTS_SCHEMA` in the modules
 3. In the component class code (for example `app.component.ts`), import `defineCustomElements` from corporate-ui-dev package, and call `defineCustomElements(['component_name'])` to load components.
+
+## Installation & Setup
+
+To install Corporate UI, run the following in the command line:
+
+```npm i corporate-ui-dev```
 
 
 ## Including Custom Elements Schema
