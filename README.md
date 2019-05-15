@@ -9,7 +9,7 @@ To run Corporate UI in your Angular application, there are few steps you need to
 
 To install Corporate UI, run the following in the command line:
 
-```npm i corporate-ui-dev```
+```npm i corporate-ui-dev --save```
 
 
 ## Including Custom Elements Schema
