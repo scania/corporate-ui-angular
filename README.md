@@ -11,6 +11,16 @@ To install Corporate UI, run the following in the command line:
 
 ```npm i corporate-ui-dev --save```
 
+### Prerequisites
+
+If you are using Angular 8+, you need to add `webcomponents` polyfill. Install the dependency:
+
+`npm i @webcomponents/webcomponentsjs --save-dev`
+
+Import the polyfill inside `src/polyfill.ts`
+
+`import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'`
+
 
 ## Including Custom Elements Schema
 
@@ -67,18 +77,33 @@ export class AppComponent {
 ```
 
 To be able to have Scania sticky footer, set the root selector to the html body. So, in the `index.html`, add id to the `body`, for example:
-```
+```html
 <body id="app-root"></body>
 ```
 
 
 ## Styling
 
-To use Scania styling on a project application, add Scania theme using the `c-theme` component. Add the code below in the angular root component template (for example in the `app.component.html`):
+To use Scania styling on a project application, import scania-theme package and add Scania theme using the `c-theme` component. 
 
-`<c-theme name="Scania" global="true"></c-theme>`
+1. Install scania-theme package
 
-If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
+   `npm i scania-theme@beta`
+
+2. Import `theme` in the project and use it with `addTheme` function from corporate-ui. You can add it in the main app script such as `app.component.ts`
+
+   ```js
+   import { addTheme } from 'corporate-ui-dev/dist/'; 
+   import { theme as scania } from 'scania-theme'; 
+
+   addTheme(scania);
+   ```
+
+3. Add the code below in the angular root component template (for example in the `app.component.html`):
+
+   `<c-theme name="scania" global="true"></c-theme>`
+
+   If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
 
 
 ## Live example
