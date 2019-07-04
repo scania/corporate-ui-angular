@@ -5,6 +5,7 @@
       *ngFor='let link of links' 
       slot='primary-items' 
       routerLink={{link.url}} 
+      [routerLinkActiveOptions]='{ exact: true }'
       [routerLinkActive]="'active'">{{link.text}}</a>
   
       <div ngbDropdown class="d-inline-block" slot="secondary-items">
