@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { defineCustomElements } from 'corporate-ui-dev/dist/define';
+import { defineCustomElements } from 'corporate-ui-dev/dist';
 
 defineCustomElements(['c-header', 'c-navigation']);
 
