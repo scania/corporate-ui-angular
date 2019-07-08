@@ -88,7 +88,7 @@ To use Scania styling on a project application, import scania-theme package and 
 
 1. Install scania-theme package
 
-   `npm i scania-theme@beta`
+   `npm i scania-theme`
 
 2. Import `theme` in the project and use it with `addTheme` function from corporate-ui. You can add it in the main app script such as `app.component.ts`
 
