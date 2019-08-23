@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
+import { InfopageComponent } from './info/infopage.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -19,7 +20,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     InfoComponent,
     ContactComponent,
     HeaderComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    InfopageComponent,
   ],
   imports: [
     BrowserModule,
