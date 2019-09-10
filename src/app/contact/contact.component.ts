@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-contact',
   template: `
-    <h1>Contact</h1>
-    <p>Some text contact goes here</p>
+    <router-outlet></router-outlet>
   `
 })
 export class ContactComponent implements OnInit {

@@ -1,13 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <c-theme name='scania' global='true'></c-theme>
 
-<app-header></app-header>
+<c-header site-name='App' site-url='/'>
+  <a routerLink='/global' slot='items'>Global</a>
+</c-header>
+
+<c-navigation navigation></c-navigation>
 
 <c-content>
   <section>
-    <c-container type="fluid">
+    <div class="container-fluid">
       <router-outlet></router-outlet>
-    </c-container>
+    </div>
   </section>
 </c-content>
 

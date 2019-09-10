@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './info/info.component';
 import { InfopageComponent } from './info/infopage.component';
 import { ContactComponent } from './contact/contact.component';
-import { HeaderComponent } from './header/header.component';
+import { ContactpageComponent } from './contact/contactpage.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     HomeComponent,
     InfoComponent,
     ContactComponent,
-    HeaderComponent,
+    ContactpageComponent,
+    NavigationComponent,
     NotfoundComponent,
     InfopageComponent,
   ],
