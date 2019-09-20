@@ -56,7 +56,7 @@ To load the components, call `defineCustomElements` from the component class cod
 
 ```js
 import { Component, Injectable } from '@angular/core';
-import { defineCustomElements } from 'corporate-ui-dev/dist/define';
+import { defineCustomElements } from 'corporate-ui-dev';
 
 defineCustomElements(['c-theme','c-footer', 'c-content']);
 // to import all components pass an 'all' value
@@ -93,7 +93,7 @@ To use Scania styling on a project application, import scania-theme package and 
 2. Import `theme` in the project and use it with `addTheme` function from corporate-ui. You can add it in the main app script such as `app.component.ts`
 
    ```js
-   import { addTheme } from 'corporate-ui-dev/dist/'; 
+   import { addTheme } from 'corporate-ui-dev'; 
    import { theme as scania } from 'scania-theme'; 
 
    addTheme(scania);
