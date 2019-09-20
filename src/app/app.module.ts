@@ -19,11 +19,11 @@ import { NotfoundComponent } from './notfound/notfound.component';
     AppComponent,
     HomeComponent,
     InfoComponent,
+    InfopageComponent,
     ContactComponent,
     ContactpageComponent,
     NavigationComponent,
     NotfoundComponent,
-    InfopageComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -9,22 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class InfopageComponent implements OnInit {
   paramValue: Observable<Params>;
-  content;
-
-  infocontent = [
-    {
-      id : 'list',
-      header : 'List',
-    },
-    {
-      id : 'table',
-      header : 'Table',
-    },
-    {
-      id : 'form',
-      header : 'Form',
-    }
-  ]
 
   constructor(
     route: ActivatedRoute
@@ -33,6 +17,4 @@ export class InfopageComponent implements OnInit {
   }
 
   ngOnInit() { }
-  
-
 }

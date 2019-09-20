@@ -8,7 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ContactpageComponent } from './contact/contactpage.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { 
     path: 'info', 
@@ -27,7 +27,7 @@ const routes: Routes = [
   },
   { 
     path: 'contact', 
-    component: ContactComponent ,
+    component: ContactComponent,
     children : [
       {
         path: '',

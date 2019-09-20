@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { defineCustomElements } from 'corporate-ui-dev/dist';
 import { Router, RoutesRecognized } from '@angular/router';
-
-defineCustomElements(['c-navigation']);
+import { items } from './../items';
 
 @Component({
   selector: '[navigation]',
@@ -10,32 +8,8 @@ defineCustomElements(['c-navigation']);
   templateUrl: './navigation.component.html'
 })
 export class NavigationComponent implements OnInit {
-
-  links = [
-    {
-      text: 'Home', url:'home', type:'primary'
-    },
-    { 
-      text: 'Info', 
-      url:'info',
-      type:'primary',
-      submenu : [
-        { text: 'List', url : 'list', type: 'primary'},
-        { text: 'Table', url : 'table', type: 'primary'},
-        { text: 'Form', url : 'form', type: 'primary'},
-      ]
-    },
-    { 
-      text: 'Contact', url:'contact', type:'primary',
-      submenu : [
-        { text: 'About', url : 'about', type: 'primary'},
-        { text: 'Profile', url : 'profile', type: 'primary'},
-      ]
-    },
-    { 
-      text: 'More', url:'/more', type:'secondary'
-    },
-  ]
+  items = items;
+  active={};
 
   dropdownData = [{
     id: 1,
@@ -45,33 +19,16 @@ export class NavigationComponent implements OnInit {
     name: 'Settings'
   }];
 
-  target : String;
-  targetParent : String;
-  isSubActive;
-  subMenuData = [];
-
-  activateSub(target) {
-
-    if(target === '/') return ;
-    target = target.replace('/','');
-    const findTarget =  this.links.filter(obj => {
-      return obj.text.toLowerCase() == target.toLowerCase();
-    });
-
-    if(findTarget.length > 0) this.targetParent = '/' + findTarget[0].url;
-    
-    if(findTarget[0]) {
-      this.isSubActive = findTarget[0].submenu ? true : false;
-      this.subMenuData = findTarget[0].submenu ? findTarget[0].submenu : [];
-    }
-        
-  }
-
-  constructor( private router: Router) {
+  constructor( 
+    router: Router,
+    ) {
     router.events.subscribe(e => {
       if(e instanceof RoutesRecognized){
-        this.target = e.url;
-        this.activateSub(this.target);
+        // match the parent url
+        const segmentPath = e.url.match(/^\/(\w+)/gm);
+        this.active = items.find(item => {
+          return item.url === segmentPath[0];
+        })
       }
     });
   }

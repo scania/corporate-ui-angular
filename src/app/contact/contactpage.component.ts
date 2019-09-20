@@ -9,18 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class ContactpageComponent implements OnInit {
   paramValue: Observable<Params>;
-  content;
-
-  details = [
-    {
-      id : 'about',
-      header : 'About',
-    },
-    {
-      id : 'profile',
-      header : 'Profile',
-    }
-  ]
 
   constructor(
     route: ActivatedRoute
@@ -29,6 +17,4 @@ export class ContactpageComponent implements OnInit {
   }
 
   ngOnInit() { }
-  
-
 }
