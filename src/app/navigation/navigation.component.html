@@ -3,9 +3,7 @@
   slot='{{link.type}}-items' 
   [ngClass]='link.subMenu ? "parent" : ""'
   routerLink={{link.url}} 
-  [routerLinkActiveOptions]='{ exact: true }'
-  [routerLinkActive]="'active'"
-  (click)="active=link">{{link.text}}</a>
+  [routerLinkActive]="'active'">{{link.text}}</a>
 
 <div ngbDropdown class="d-inline-block dropdown" slot="secondary-items">
   <a id="dropdownBasic1" ngbDropdownToggle>User</a>
@@ -18,7 +16,25 @@
   </div>
 </div>
 
-<c-navigation slot="sub" [attr.target]="active.url" [ngClass]= "active.subMenu ? 'active' : ''" *ngIf="active.subMenu">
+<ng-container *ngFor='let link of items'>
+  <c-navigation 
+    *ngIf="link.subMenu"
+    slot="sub"
+    [attr.target]="link.url"
+    [ngClass]= "active.subMenu ? 'active' : ''">
+      <a
+      *ngFor='let menu of link.subMenu'
+      slot='{{menu.type}}-items'
+      routerLink='{{link.url}}/{{menu.url}}'
+      routerLinkActive 
+      #rla = "routerLinkActive"
+      [attr.active]="rla.isActive ? true : null"
+      >{{menu.text}}</a>
+  </c-navigation>
+</ng-container>
+
+<!-- Another way of rendering sub-navigation dynamically, but more tweak is needed for the interaction in mobile view -->
+<!-- <c-navigation slot="sub" [attr.target]="active.url" [ngClass]= "active.subMenu ? 'active' : ''" *ngIf="active.subMenu">
   <a
     *ngFor='let menu of active.subMenu'
     slot='{{menu.type}}-items'
@@ -27,4 +43,4 @@
     #rla = "routerLinkActive"
     [attr.active]="rla.isActive ? true : null"
   >{{menu.text}}</a>
-</c-navigation>
+</c-navigation> -->
