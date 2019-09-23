@@ -25,7 +25,7 @@ export class NavigationComponent implements OnInit {
     router.events.subscribe(e => {
       if(e instanceof RoutesRecognized){
         // match the parent url
-        const segmentPath = e.url.match(/^\/(\w+)/gm);
+        const segmentPath = e.url === '/' ? ['/home'] : e.url.match(/^\/(\w+)/gm);
         this.active = items.find(item => {
           return item.url === segmentPath[0];
         })

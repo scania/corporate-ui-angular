@@ -17,11 +17,7 @@ export const items = [
   { 
     text: 'Contact', 
     url:'/contact', 
-    type:'primary',
-    subMenu : [
-      { text: 'About', url : '/about', type: 'primary'},
-      { text: 'Profile', url : '/profile', type: 'primary'},
-    ]
+    type:'primary'
   },
   { 
     text: 'More', 
