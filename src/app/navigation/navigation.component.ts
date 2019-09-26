@@ -9,7 +9,7 @@ import { items } from './../items';
 })
 export class NavigationComponent implements OnInit {
   items = items;
-  active={};
+  active:any = {};
 
   dropdownData = [{
     id: 1,
@@ -28,7 +28,7 @@ export class NavigationComponent implements OnInit {
         const segmentPath = e.url === '/' ? ['/home'] : e.url.match(/^\/(\w+)/gm);
         this.active = items.find(item => {
           return item.url === segmentPath[0];
-        })
+        }) || {};
       }
     });
   }
