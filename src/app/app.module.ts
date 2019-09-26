@@ -7,7 +7,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './contact/contact.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
@@ -15,7 +14,6 @@ import { NotfoundComponent } from './notfound/notfound.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    ContactComponent,
     NavigationComponent,
     NotfoundComponent,
   ],

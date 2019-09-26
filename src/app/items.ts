@@ -14,14 +14,4 @@ export const items = [
       { text: 'Form', url : '/form', type: 'primary'},
     ]
   },
-  { 
-    text: 'Contact', 
-    url:'/contact', 
-    type:'primary'
-  },
-  { 
-    text: 'More', 
-    url:'/more', 
-    type:'secondary'
-  },
 ]
