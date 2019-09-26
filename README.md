@@ -1,15 +1,39 @@
 # Corporate UI in Angular application
 
-To run Corporate UI in your Angular application, there are few steps you need to follow:
-1. Install `corporate-ui-dev` package from NPM in your project folder
+## Live example
+
+See the running example on [this link](https://scania.github.io/corporate-ui-angular/).
+
+## Getting started
+
+1. Clone the project
+2. Run `npm i` to install package dependencies
+3. Run `npm start`. 
+
+   The app will run in the development mode.<br>
+   Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
+
+4. `npm run build`
+
+   Builds the app for production to the `build` folder.<br>
+   Your app is ready to be deployed!
+
+
+## Project setup
+
+1. Install `corporate-ui-dev` and `scania-theme` package from NPM in your project folder
+
+   ```
+   npm i corporate-ui-dev
+   npm i scania-theme
+   ```
 2. Include `CUSTOM_ELEMENTS_SCHEMA` in the modules
-3. In the component class code (for example `app.component.ts`), import `defineCustomElements` from corporate-ui-dev package, and call `defineCustomElements(['component_name'])` to load components.
+3. Import `defineCustomElements` and `add-theme` from corporate-ui-dev package
+4. Import `theme` from scania-theme package and use `c-theme` component in the template
 
-## Installation & Setup
-
-To install Corporate UI, run the following in the command line:
-
-```npm i corporate-ui-dev --save```
+   ```<c-theme name="scania" global="true"></c-theme>```
+   
+   If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
 
 ### Prerequisites
 
@@ -50,15 +74,18 @@ export class AppModule { }
 ```
 
 
-## Call defineCustomElements
+## Use Corporate UI and Scania theme
 
-To load the components, call `defineCustomElements` from the component class code. Here is an example to load the components from `app.component.ts`. The code below will load `c-theme, c-footer, and c-content`. For all available components, check [this link](https://static.scania.com/build/global/4.0.0-alpha.1/www/index.html). To import all components, pass an 'all' string instead (`defineCustomElements('all')`).
+The code below will load `c-theme, c-footer, and c-content`. For all available components, check [this link](https://static.scania.com/build/global/4.0.0-alpha.1/www/index.html). To import all components, pass an 'all' string instead (`defineCustomElements('all')`).
 
 ```js
 import { Component, Injectable } from '@angular/core';
-import { defineCustomElements } from 'corporate-ui-dev/dist/define';
+
+import { defineCustomElements, addTheme } from 'corporate-ui-dev';
+import { theme as scania } from 'scania-theme'; 
 
 defineCustomElements(['c-theme','c-footer', 'c-content']);
+addTheme(scania);
 // to import all components pass an 'all' value
 // defineCustomElements('all');
 
@@ -68,7 +95,18 @@ defineCustomElements(['c-theme','c-footer', 'c-content']);
 
 @Component({
   selector: '#app-root',
-  templateUrl: './app.component.html'
+  template: `
+  <c-theme name="scania" global="true"></c-theme>
+  <c-header
+    site-name="Corporate UI"
+    items='[{ "text": "Home", "href": "/" }]'>
+  </c-header>
+
+  <c-footer>
+    <a href="/cookies" slot="items">Cookies</a>
+    <a href="/contact-us" slot="items">Contact us</a>
+  </c-footer>
+  `
 })
 export class AppComponent {
   title = 'angular-cui';
@@ -80,49 +118,3 @@ To be able to have Scania sticky footer, set the root selector to the html body.
 ```html
 <body id="app-root"></body>
 ```
-
-
-## Styling
-
-To use Scania styling on a project application, import scania-theme package and add Scania theme using the `c-theme` component. 
-
-1. Install scania-theme package
-
-   `npm i scania-theme`
-
-2. Import `theme` in the project and use it with `addTheme` function from corporate-ui. You can add it in the main app script such as `app.component.ts`
-
-   ```js
-   import { addTheme } from 'corporate-ui-dev/dist/'; 
-   import { theme as scania } from 'scania-theme'; 
-
-   addTheme(scania);
-   ```
-
-3. Add the code below in the angular root component template (for example in the `app.component.html`):
-
-   `<c-theme name="scania" global="true"></c-theme>`
-
-   If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
-
-
-## Live example
-
-See the running example on [this link](https://scania.github.io/corporate-ui-angular/).
-
-
-## How to run this project
-
-1. Clone the project
-2. Run `npm i` to install package dependencies
-3. Run `npm start`. 
-
-   The app will run in the development mode.<br>
-   Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
-
-4. `npm run build`
-
-   Builds the app for production to the `build` folder.<br>
-   Your app is ready to be deployed!
-
-
