@@ -6,10 +6,29 @@ import { ListComponent } from './subpages/list.component';
 import { FormComponent } from './subpages/form.component';
 
 export const routes: Routes = [
-  { path: 'info',  redirectTo: 'info/list', pathMatch: 'full' },
-  { path: 'info/table', component: TableComponent },
-  { path: 'info/list', component: ListComponent },
-  { path: 'info/form', component: FormComponent },
+  { 
+    path: 'info',
+    children: [
+      {
+        path: '',
+        redirectTo: 'list',
+        pathMatch: 'full',
+      },
+      {
+        path: 'table', 
+        component: TableComponent
+      },
+      {
+        path: 'list',
+        component: ListComponent
+      },
+      { 
+        path: 'form',
+        component: FormComponent 
+      },
+    ]
+  },
+  
 ];
 
 @NgModule({

@@ -16,31 +16,13 @@
   </div>
 </div>
 
-<ng-container *ngFor='let link of items'>
-  <c-navigation 
-    *ngIf="link.subMenu"
-    slot="sub"
-    [attr.target]="link.url"
-    [ngClass]= "active.subMenu ? 'active' : ''">
-      <a
-      *ngFor='let menu of link.subMenu'
-      slot='{{menu.type}}-items'
-      routerLink='{{link.url}}/{{menu.url}}'
-      routerLinkActive 
-      #rla = "routerLinkActive"
-      [attr.active]="rla.isActive ? true : null"
-      >{{menu.text}}</a>
-  </c-navigation>
-</ng-container>
-
-<!-- Another way of rendering sub-navigation dynamically, but more tweak is needed for the interaction in mobile view -->
-<!-- <c-navigation slot="sub" [attr.target]="active.url" [ngClass]= "active.subMenu ? 'active' : ''" *ngIf="active.subMenu">
+<c-navigation slot="sub" [attr.target]="active.url" [ngClass]= "active.subMenu ? 'active' : ''">
   <a
     *ngFor='let menu of active.subMenu'
     slot='{{menu.type}}-items'
-    routerLink='{{active.url}}/{{menu.url}}'
-    routerLinkActive 
+    routerLink='{{active.url}}{{menu.url}}'
+    routerLinkActive="active" 
     #rla = "routerLinkActive"
     [attr.active]="rla.isActive ? true : null"
   >{{menu.text}}</a>
-</c-navigation> -->
+</c-navigation>
