@@ -7,19 +7,15 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
-import { InfoComponent } from './info/info.component';
-import { ContactComponent } from './contact/contact.component';
-import { HeaderComponent } from './header/header.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    InfoComponent,
-    ContactComponent,
-    HeaderComponent,
-    NotfoundComponent
+    NavigationComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

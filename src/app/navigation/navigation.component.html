@@ -1,0 +1,28 @@
+<a 
+  *ngFor='let link of items' 
+  slot='{{link.type}}-items' 
+  [ngClass]='link.subMenu ? "parent" : ""'
+  routerLink={{link.url}} 
+  [routerLinkActive]="'active'">{{link.text}}</a>
+
+<div ngbDropdown class="d-inline-block dropdown" slot="secondary-items">
+  <a id="dropdownBasic1" ngbDropdownToggle>User</a>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+    <button
+      *ngFor='let item of dropdownData'
+      ngbDropdownItem
+      class='dropdown-item'
+    >{{item.name}}</button>
+  </div>
+</div>
+
+<c-navigation slot="sub" [attr.target]="active.url" [ngClass]= "active.subMenu ? 'active' : ''">
+  <a
+    *ngFor='let menu of active.subMenu'
+    slot='{{menu.type}}-items'
+    routerLink='{{active.url}}{{menu.url}}'
+    routerLinkActive="active" 
+    #rla = "routerLinkActive"
+    [attr.active]="rla.isActive ? true : null"
+  >{{menu.text}}</a>
+</c-navigation>

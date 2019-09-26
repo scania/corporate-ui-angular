@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-info',
-  templateUrl: './info.component.html'
+  template: `<h1>Info</h1>`
 })
 export class InfoComponent implements OnInit {
 
