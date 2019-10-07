@@ -15,7 +15,8 @@
     >{{item.name}}</button>
   </div>
 </div>
-
+<!-- For deployment to github page, target attribute needs namespace before the url  -->
+<!-- <c-navigation slot="sub" [attr.target]="'/corporate-ui-angular'+active.url" [ngClass]= "active.subMenu ? 'active' : ''"></c-navigation> -->
 <c-navigation slot="sub" [attr.target]="active.url" [ngClass]= "active.subMenu ? 'active' : ''">
   <a
     *ngFor='let menu of active.subMenu'

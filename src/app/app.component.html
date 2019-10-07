@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <c-theme name='scania' global='true'></c-theme>
 
-<c-header site-name='App' site-url='/'>
+<c-header site-name='App' site-url='/home'>
   <a routerLink='/global' slot='items'>Global</a>
 </c-header>
 
@@ -9,13 +9,13 @@
 
 <c-content>
   <section>
-    <div class="container-fluid">
+    <div class='container-fluid'>
       <router-outlet></router-outlet>
     </div>
   </section>
 </c-content>
 
 <c-footer>
-  <a href="/contact" slot="items">Contact</a>
+  <a routerLink='/contact' slot='items'>Contact</a>
 </c-footer>
 
