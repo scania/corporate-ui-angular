@@ -23,7 +23,6 @@
     slot='{{menu.type}}-items'
     routerLink='{{active.url}}{{menu.url}}'
     routerLinkActive="active" 
-    #rla = "routerLinkActive"
-    [attr.active]="rla.isActive ? true : null"
+    [ngClass]='routerLinkActive ? active : ""'
   >{{menu.text}}</a>
 </c-navigation>
