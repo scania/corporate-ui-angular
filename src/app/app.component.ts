@@ -2,7 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { theme as scania} from 'scania-theme';
 import { defineCustomElements, addTheme } from 'corporate-ui-dev';
 
-defineCustomElements('all');
+defineCustomElements();
 addTheme(scania);
 
 @Injectable({
