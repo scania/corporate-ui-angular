@@ -52,7 +52,7 @@ Include `CUSTOM_ELEMENTS_SCHEMA` in the module that will use the Corporate UI co
 
 ```js
 import { BrowserModule } from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -76,7 +76,7 @@ export class AppModule { }
 
 ## Use Corporate UI and Scania theme
 
-The code below will load `c-theme, c-footer, and c-content`. For all available components, check [this link](https://static.scania.com/build/global/4.0.0-alpha.1/www/index.html). To import all components, pass an 'all' string instead (`defineCustomElements('all')`).
+For all available components, check [this link](https://scania.github.io/corporate-ui-site/).
 
 ```js
 import { Component, Injectable } from '@angular/core';
@@ -84,10 +84,8 @@ import { Component, Injectable } from '@angular/core';
 import { defineCustomElements, addTheme } from 'corporate-ui-dev';
 import { theme as scania } from 'scania-theme'; 
 
-defineCustomElements(['c-theme','c-footer', 'c-content']);
+defineCustomElements();
 addTheme(scania);
-// to import all components pass an 'all' value
-// defineCustomElements('all');
 
 @Injectable({
   providedIn: 'root',
