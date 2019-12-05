@@ -6,7 +6,7 @@ import { InfoComponent } from './info.component';
 import { TableComponent } from './subpages/table.component';
 import { FormComponent } from './subpages/form.component';
 import { ListComponent } from './subpages/list.component';
-
+import { ModalComponent } from './subpages/modal.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +14,7 @@ import { ListComponent } from './subpages/list.component';
     TableComponent,
     FormComponent,
     ListComponent,
+    ModalComponent
   ],
   imports: [
     InfoRoutingModule,
