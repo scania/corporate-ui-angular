@@ -5,11 +5,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --configuration es5 --disable-host-check",
-    "build": "ng build --prod --output-path docs --base-href /corporate-ui-angular/",
+    "build": "ng build --base-href %npm_package_name%",
+    "deploy": "npm run build && gh-pages -d dist",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy": "gh-pages -d docs"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
