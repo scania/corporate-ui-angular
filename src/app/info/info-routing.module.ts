@@ -4,9 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { TableComponent } from './subpages/table.component';
 import { ListComponent } from './subpages/list.component';
 import { FormComponent } from './subpages/form.component';
+import { ModalComponent } from './subpages/modal.component';
 
 export const routes: Routes = [
-  { 
+  {
     path: 'info',
     children: [
       {
@@ -15,20 +16,23 @@ export const routes: Routes = [
         pathMatch: 'full',
       },
       {
-        path: 'table', 
+        path: 'table',
         component: TableComponent
       },
       {
         path: 'list',
         component: ListComponent
       },
-      { 
+      {
         path: 'form',
-        component: FormComponent 
+        component: FormComponent
+      },
+      {
+        path: 'modal',
+        component: ModalComponent
       },
     ]
-  },
-  
+  }
 ];
 
 @NgModule({
