@@ -4,7 +4,7 @@
   "homepage": "https://scania.github.io/corporate-ui-angular",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration es5 --disable-host-check",
     "build": "ng build --prod --output-path docs --base-href /corporate-ui-angular/",
     "test": "ng test",
     "lint": "ng lint",
@@ -35,6 +35,7 @@
     "@angular/language-service": "^8.0.3",
     "@types/jasmine": "~3.3.13",
     "@types/jasminewd2": "~2.0.6",
+    "@types/jest": "^24.0.23",
     "@types/node": "~12.0.10",
     "angular-dropdown-component": "^1.0.8",
     "bootstrap": "^4.3.1",
