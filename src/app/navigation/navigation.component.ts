@@ -5,7 +5,6 @@ import { name } from '../../../package.json'
 
 @Component({
   selector: '[navigation]',
-  styleUrls: ['./navigation.component.scss'],
   templateUrl: './navigation.component.html'
 })
 export class NavigationComponent implements OnInit {

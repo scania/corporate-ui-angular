@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { APP_BASE_HREF } from '@angular/common';
 
-import { DropdownModule } from 'angular-dropdown-component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -23,7 +22,6 @@ import { name } from '../../package.json';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DropdownModule,
     NgbModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
