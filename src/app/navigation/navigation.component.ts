@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 import { items } from './../items';
+import { name } from '../../../package.json'
 
 @Component({
   selector: '[navigation]',
-  styleUrls: ['./navigation.component.scss'],
   templateUrl: './navigation.component.html'
 })
 export class NavigationComponent implements OnInit {
   items = items;
   active:any = {};
+  appName = name;
 
   dropdownData = [{
     id: 1,

@@ -1,9 +1,4 @@
 import { Component, Injectable } from '@angular/core';
-import { theme as scania} from 'scania-theme';
-import { defineCustomElements, addTheme } from 'corporate-ui-dev';
-
-defineCustomElements();
-addTheme(scania);
 
 @Injectable({
   providedIn: 'root',
@@ -15,5 +10,5 @@ addTheme(scania);
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'angular-cui';
+  title = 'Corporate UI Angular';
 }

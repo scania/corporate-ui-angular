@@ -21,14 +21,14 @@ See the running example on [this link](https://scania.github.io/corporate-ui-ang
 
 ## Project setup
 
-1. Install `corporate-ui-dev` and `scania-theme` package from NPM in your project folder
+1. Install `corporate-ui` and `scania-theme` package from NPM in your project folder
 
    ```
-   npm i corporate-ui-dev
+   npm i corporate-ui
    npm i scania-theme
    ```
 2. Include `CUSTOM_ELEMENTS_SCHEMA` in the modules
-3. Import `defineCustomElements` and `add-theme` from corporate-ui-dev package
+3. Import `defineCustomElements` and `add-theme` from corporate-ui package
 4. Import `theme` from scania-theme package and use `c-theme` component in the template
 
    ```<c-theme name="scania" global="true"></c-theme>```
@@ -81,7 +81,7 @@ For all available components, check [this link](https://scania.github.io/corpora
 ```js
 import { Component, Injectable } from '@angular/core';
 
-import { defineCustomElements, addTheme } from 'corporate-ui-dev';
+import { defineCustomElements, addTheme } from 'corporate-ui';
 import { theme as scania } from 'scania-theme'; 
 
 defineCustomElements();

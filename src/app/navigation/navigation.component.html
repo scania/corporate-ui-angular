@@ -1,26 +1,25 @@
 <a 
   *ngFor='let link of items' 
-  slot='{{link.type}}-items' 
+  [attr.slot]='link.type + "-items"' 
   [ngClass]='link.subMenu ? "parent" : ""'
   routerLink={{link.url}} 
   [routerLinkActive]="'active'">{{link.text}}</a>
 
-<div ngbDropdown class="d-inline-block dropdown" slot="secondary-items">
-  <a id="dropdownBasic1" ngbDropdownToggle>User</a>
-  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-    <button
-      *ngFor='let item of dropdownData'
-      ngbDropdownItem
-      class='dropdown-item'
-    >{{item.name}}</button>
+<div class="dropdown" slot="secondary-items">
+  <a class="dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    User
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#" *ngFor='let item of dropdownData'
+    ngbDropdownItem
+    class='dropdown-item'>{{item.name}}</a>
   </div>
 </div>
-<!-- For deployment to github page, target attribute needs namespace before the url  -->
-<!-- <c-navigation slot="sub" [attr.target]="'/corporate-ui-angular'+active.url" [ngClass]= "active.subMenu ? 'active' : ''"></c-navigation> -->
-<c-navigation slot="sub" [attr.target]="active.url" [ngClass]= "active.subMenu ? 'active' : ''">
+
+<c-navigation slot="sub" [attr.target]="'/'+ appName + active.url" [ngClass]= "active.subMenu ? 'active' : ''">
   <a
     *ngFor='let menu of active.subMenu'
-    slot='{{menu.type}}-items'
+    [attr.slot]='menu.type + "-items"'
     routerLink='{{active.url}}{{menu.url}}'
     routerLinkActive="active" 
     [ngClass]='routerLinkActive ? active : ""'

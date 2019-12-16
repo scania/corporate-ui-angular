@@ -4,12 +4,12 @@
   "homepage": "https://scania.github.io/corporate-ui-angular",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --prod --output-path docs --base-href /corporate-ui-angular/",
+    "start": "ng serve --configuration es5 --disable-host-check",
+    "build": "ng build --base-href %npm_package_name%",
+    "deploy": "npm run build && gh-pages -d dist",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy": "gh-pages -d docs"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -35,11 +35,11 @@
     "@angular/language-service": "^8.0.3",
     "@types/jasmine": "~3.3.13",
     "@types/jasminewd2": "~2.0.6",
+    "@types/jest": "^24.0.23",
     "@types/node": "~12.0.10",
-    "angular-dropdown-component": "^1.0.8",
     "bootstrap": "^4.3.1",
     "codelyzer": "~5.1.0",
-    "corporate-ui-dev": "4.0.0-beta.4",
+    "corporate-ui": "4.0.0-beta.6",
     "gh-pages": "^2.0.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -49,7 +49,7 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.2",
-    "scania-theme": "1.0.0-alpha.23",
+    "scania-theme": "1.0.0-beta.1",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "3.4.5"
