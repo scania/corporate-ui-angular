@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var name = "corporate-ui";
-var version = "4.0.0-beta.6";
+var version = "4.0.0";
 var description = "In this repository we're developing the next generation components for Corporate UI";
 var repository = {
 	type: "git",
