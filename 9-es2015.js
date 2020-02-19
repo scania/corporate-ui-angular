@@ -10,11 +10,11 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c_theme", function() { return Theme; });
-/* harmony import */ var _core_7b39e2be_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-7b39e2be.js */ "./node_modules/corporate-ui/dist/esm/core-7b39e2be.js");
+/* harmony import */ var _core_18aa72ad_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-18aa72ad.js */ "./node_modules/corporate-ui/dist/esm/core-18aa72ad.js");
 
 
 var name = "corporate-ui";
-var version = "4.0.0";
+var version = "4.0.3";
 var description = "In this repository we're developing the next generation components for Corporate UI";
 var repository = {
 	type: "git",
@@ -65,7 +65,8 @@ var devDependencies = {
 	"popper.js": "1.15.0",
 	puppeteer: "1.19.0",
 	redux: "4.0.4",
-	renamer: "1.1.4"
+	renamer: "1.1.4",
+	"rollup-plugin-dotenv": "0.2.0"
 };
 var license = "MIT";
 const _package = {
@@ -91,15 +92,15 @@ const _package = {
 
 const Theme = class {
     constructor(hostRef) {
-        Object(_core_7b39e2be_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
+        Object(_core_18aa72ad_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
         /** By setting this to true bootstrap classes will be accessable globally */
         this.global = false;
         this.currentTheme = { favicons: [], components: [] };
-        this.ContextStore = Object(_core_7b39e2be_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "store");
+        this.ContextStore = Object(_core_18aa72ad_js__WEBPACK_IMPORTED_MODULE_0__["d"])(this, "store");
     }
     setName(name) {
         this.setTheme(name);
-        this.store.dispatch({ type: _core_7b39e2be_js__WEBPACK_IMPORTED_MODULE_0__["e"].SET_THEME, current: name });
+        this.store.dispatch({ type: _core_18aa72ad_js__WEBPACK_IMPORTED_MODULE_0__["e"].SET_THEME, current: name });
     }
     setTheme(name = undefined) {
         this.name = name || this.store.getState().theme.current;
@@ -131,15 +132,15 @@ const Theme = class {
             this.renderFavicon();
         }
         return [
-            this.currentTheme ? Object(_core_7b39e2be_js__WEBPACK_IMPORTED_MODULE_0__["h"])("style", null, this.currentTheme.components[this.tagName]) : '',
-            this.global ? Object(_core_7b39e2be_js__WEBPACK_IMPORTED_MODULE_0__["h"])("c-global-style", null) : '',
+            this.currentTheme ? Object(_core_18aa72ad_js__WEBPACK_IMPORTED_MODULE_0__["h"])("style", null, this.currentTheme.components[this.tagName]) : '',
+            this.global ? Object(_core_18aa72ad_js__WEBPACK_IMPORTED_MODULE_0__["h"])("c-global-style", null) : '',
         ];
     }
-    get el() { return Object(_core_7b39e2be_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this); }
+    get el() { return Object(_core_18aa72ad_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this); }
     static get watchers() { return {
         "name": ["setName"]
     }; }
-    static get style() { return ":root {\n  font-size: 62.5%;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --primary: #007bff;\n  --secondary: #6c757d;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, \"Segoe UI\",\n    Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\",\n    \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,\n    \"Liberation Mono\", \"Courier New\", monospace;\n}\n\n:host([name]) {\n  --display: none;\n}\n\nbody[data-env]:before {\n  background-color: #ddd;\n  border: 2px solid #fafafa;\n  display: inline-block;\n  font-size: 14px;\n  font-weight: bold;\n  padding: 52px 50px 2px;\n  content: attr(data-env);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1170;\n  -ms-transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  -moz-transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  -webkit-transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  -o-transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  text-transform: uppercase;\n}\n\nbody[data-env=\"\"]:before,\nbody[data-env=prod]:before,\nbody[data-env=production]:before,\nbody[data-env=hidden]:before {\n  display: none;\n}\n\nbody[data-env=development]:before {\n  content: \"dev\";\n}"; }
+    static get style() { return ":root {\n  font-size: 62.5%;\n  --blue: #007bff;\n  --indigo: #6610f2;\n  --purple: #6f42c1;\n  --pink: #e83e8c;\n  --red: #dc3545;\n  --orange: #fd7e14;\n  --yellow: #ffc107;\n  --green: #28a745;\n  --teal: #20c997;\n  --cyan: #17a2b8;\n  --white: #fff;\n  --gray: #6c757d;\n  --gray-dark: #343a40;\n  --primary: #007bff;\n  --secondary: #6c757d;\n  --success: #28a745;\n  --info: #17a2b8;\n  --warning: #ffc107;\n  --danger: #dc3545;\n  --light: #f8f9fa;\n  --dark: #343a40;\n  --breakpoint-xs: 0;\n  --breakpoint-sm: 576px;\n  --breakpoint-md: 768px;\n  --breakpoint-lg: 992px;\n  --breakpoint-xl: 1200px;\n  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, \"Segoe UI\",\n    Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\",\n    \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,\n    \"Liberation Mono\", \"Courier New\", monospace;\n}\n\nbody[data-env]:before {\n  background-color: #ddd;\n  border: 2px solid #fafafa;\n  display: inline-block;\n  font-size: 14px;\n  font-weight: bold;\n  padding: 52px 50px 2px;\n  content: attr(data-env);\n  position: fixed;\n  top: 0;\n  left: 0;\n  z-index: 1170;\n  -ms-transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  -moz-transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  -webkit-transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  -o-transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  transform: translateY(-50%) translateX(-50%) rotate(-45deg);\n  text-transform: uppercase;\n}\n\nbody[data-env=\"\"]:before,\nbody[data-env=prod]:before,\nbody[data-env=production]:before,\nbody[data-env=hidden]:before {\n  display: none;\n}\n\nbody[data-env=development]:before {\n  content: \"dev\";\n}"; }
 };
 
 
