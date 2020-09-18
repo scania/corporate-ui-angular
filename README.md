@@ -8,7 +8,7 @@ See the running example on [this link](https://scania.github.io/corporate-ui-ang
 
 Visit our Design System at [digitaldesign.scania.com](https://digitaldesign.scania.com/) for more information
 
-For more information about how to use Corporate-Ui and Scania-Theme go to [digtal.design.scania.com/getting-started](https://digitaldesign.scania.com/getting-started/development)
+For more information about how to use Corporate-Ui and Scania-Theme go to [digitaldesign.scania.com/getting-started](https://digitaldesign.scania.com/getting-started/development)
 
 ## Getting started
 
