@@ -1,29 +1,33 @@
-# Corporate UI in Angular application
+# Angular example application using Corporate-Ui and Scania-theme
 
-## Live example
+To run this project locally you will need to NodeJS and npm.
 
 See the running example on [this link](https://scania.github.io/corporate-ui-angular/).
 
+## Scania Digital Design System
+
+Visit our Design System at [digitaldesign.scania.com](https://digitaldesign.scania.com/) for more information
+
+For more information about how to use Corporate-Ui and Scania-Theme go to [digitaldesign.scania.com/getting-started](https://digitaldesign.scania.com/getting-started/development)
+
 ## Getting started
 
-1. Clone the project
-2. Run `npm i` to install package dependencies
-3. Run `npm start`. 
+Clone this repo, install all dependencies and start it:
+```bash
+git clone https://github.com/scania/corporate-ui-angular.git
+cd corporate-ui-angular
+npm i
+npm start
+```
 
-   The app will run in the development mode.<br>
-   Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
-
-4. `npm run build`
-
-   Builds the app for production to the `build` folder.<br>
-   Your app is ready to be deployed!
+Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 
 
 ## Project setup
 
 1. Install `corporate-ui` and `scania-theme` package from NPM in your project folder
 
-   ```
+   ```bash
    npm i corporate-ui
    npm i scania-theme
    ```
@@ -32,7 +36,7 @@ See the running example on [this link](https://scania.github.io/corporate-ui-ang
 4. Import `theme` from scania-theme package and use `c-theme` component in the template
 
    ```<c-theme name="scania" global="true"></c-theme>```
-   
+
    If the `global` attribute set to true, it will add bootstrap 4 styling classes & javascript.
 
 ### Prerequisites
@@ -72,7 +76,6 @@ import { AppRoutingModule } from './app-routing.module';
 export class AppModule { }
 
 ```
-
 
 ## Use Corporate UI and Scania theme
 
