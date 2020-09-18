@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\eyuz78\development\cui-demo\corporate-ui-angular\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Dev\corporate-ui-angular\src\styles.css */"./src/styles.css");
 
 
 /***/ })

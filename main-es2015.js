@@ -23,53 +23,82 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "./node_modules/corporate-ui/dist/esm lazy recursive ^\\.\\/.*\\.entry\\.js.*$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$":
-/*!********************************************************************************************************************************************!*\
-  !*** ./node_modules/corporate-ui/dist/esm lazy ^\.\/.*\.entry\.js.*$ include: \.entry\.js$ exclude: \.system\.entry\.js$ namespace object ***!
-  \********************************************************************************************************************************************/
+/***/ "./node_modules/corporate-ui/dist/esm lazy recursive ^\\.\\/.*\\.entry\\.js$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$":
+/*!******************************************************************************************************************************************!*\
+  !*** ./node_modules/corporate-ui/dist/esm lazy ^\.\/.*\.entry\.js$ include: \.entry\.js$ exclude: \.system\.entry\.js$ namespace object ***!
+  \******************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"./c-code-sample.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-code-sample.entry.js",
-		0
+		2
 	],
 	"./c-content.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-content.entry.js",
-		1
+		4
+	],
+	"./c-cookie.entry.js": [
+		"./node_modules/corporate-ui/dist/esm/c-cookie.entry.js",
+		0,
+		"common",
+		3
 	],
 	"./c-dealer-header.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-dealer-header.entry.js",
-		2
+		"common",
+		5
+	],
+	"./c-dropdown.entry.js": [
+		"./node_modules/corporate-ui/dist/esm/c-dropdown.entry.js",
+		0,
+		1,
+		"common",
+		6
 	],
 	"./c-footer.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-footer.entry.js",
-		3
+		"common",
+		7
 	],
 	"./c-global-style.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-global-style.entry.js",
-		4
+		8
 	],
 	"./c-header.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-header.entry.js",
-		5
+		"common",
+		9
 	],
 	"./c-hello-world.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-hello-world.entry.js",
-		6
+		10
 	],
 	"./c-icon.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-icon.entry.js",
-		7
+		"common",
+		11
+	],
+	"./c-modal.entry.js": [
+		"./node_modules/corporate-ui/dist/esm/c-modal.entry.js",
+		0,
+		"common",
+		12
 	],
 	"./c-navigation.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-navigation.entry.js",
-		8
+		"common",
+		13
+	],
+	"./c-table.entry.js": [
+		"./node_modules/corporate-ui/dist/esm/c-table.entry.js",
+		"common",
+		14
 	],
 	"./c-theme.entry.js": [
 		"./node_modules/corporate-ui/dist/esm/c-theme.entry.js",
-		9
+		15
 	]
 };
 function webpackAsyncContext(req) {
@@ -82,14 +111,14 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(function() {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
 		return __webpack_require__(id);
 	});
 }
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = "./node_modules/corporate-ui/dist/esm lazy recursive ^\\.\\/.*\\.entry\\.js.*$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$";
+webpackAsyncContext.id = "./node_modules/corporate-ui/dist/esm lazy recursive ^\\.\\/.*\\.entry\\.js$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$";
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -123,7 +152,7 @@ module.exports = "<a \r\n  *ngFor='let link of items' \r\n  [attr.slot]='link.ty
 /*! exports provided: name, version, homepage, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = {"name":"corporate-ui-angular","version":"0.1.0","homepage":"https://scania.github.io/corporate-ui-angular","scripts":{"ng":"ng","start":"ng serve --configuration es5 --disable-host-check","build":"ng build --base-href %npm_package_name%","deploy":"npm run build && gh-pages -d dist","test":"ng test","lint":"ng lint","e2e":"ng e2e"},"private":true,"dependencies":{"@angular/animations":"^8.0.3","@angular/common":"^8.0.3","@angular/compiler":"^8.0.3","@angular/core":"^8.0.3","@angular/forms":"^8.0.3","@angular/http":"^7.2.15","@angular/platform-browser":"^8.0.3","@angular/platform-browser-dynamic":"^8.0.3","@angular/router":"^8.0.3","@ng-bootstrap/ng-bootstrap":"^5.0.0-rc.1","@webcomponents/webcomponentsjs":"^2.2.10","core-js":"^3.1.4","rxjs":"~6.5.2","zone.js":"~0.9.1"},"devDependencies":{"@angular-devkit/build-angular":"~0.800.6","@angular/cli":"~8.0.6","@angular/compiler-cli":"^8.0.3","@angular/language-service":"^8.0.3","@types/jasmine":"~3.3.13","@types/jasminewd2":"~2.0.6","@types/jest":"^24.0.23","@types/node":"~12.0.10","bootstrap":"^4.3.1","codelyzer":"~5.1.0","corporate-ui":"4.0.3","gh-pages":"^2.0.1","jasmine-core":"~3.4.0","jasmine-spec-reporter":"~4.2.1","karma":"~4.1.0","karma-chrome-launcher":"~2.2.0","karma-coverage-istanbul-reporter":"~2.0.5","karma-jasmine":"~2.0.1","karma-jasmine-html-reporter":"^1.4.2","protractor":"~5.4.2","scania-theme":"1.0.2","ts-node":"~8.3.0","tslint":"~5.18.0","typescript":"3.4.5"}};
+module.exports = {"name":"corporate-ui-angular","version":"0.1.0","homepage":"https://scania.github.io/corporate-ui-angular","scripts":{"ng":"ng","start":"ng serve --configuration es5 --disable-host-check","build":"ng build --base-href %npm_package_name%","deploy":"npm run build && gh-pages -d dist","test":"ng test","lint":"ng lint","e2e":"ng e2e"},"private":true,"dependencies":{"@angular/animations":"^8.0.3","@angular/common":"^8.0.3","@angular/compiler":"^8.0.3","@angular/core":"^8.0.3","@angular/forms":"^8.0.3","@angular/http":"^7.2.15","@angular/platform-browser":"^8.0.3","@angular/platform-browser-dynamic":"^8.0.3","@angular/router":"^8.0.3","@ng-bootstrap/ng-bootstrap":"^5.0.0-rc.1","@webcomponents/webcomponentsjs":"^2.2.10","core-js":"^3.1.4","rxjs":"~6.5.2","zone.js":"~0.9.1"},"devDependencies":{"@angular-devkit/build-angular":"~0.800.6","@angular/cli":"~8.0.6","@angular/compiler-cli":"^8.0.3","@angular/language-service":"^8.0.3","@types/jasmine":"~3.3.13","@types/jasminewd2":"~2.0.6","@types/jest":"^24.0.23","@types/node":"~12.0.10","bootstrap":"^4.3.1","codelyzer":"~5.1.0","corporate-ui":"next","gh-pages":"^2.0.1","jasmine-core":"~3.4.0","jasmine-spec-reporter":"~4.2.1","karma":"~4.1.0","karma-chrome-launcher":"~2.2.0","karma-coverage-istanbul-reporter":"~2.0.5","karma-jasmine":"~2.0.1","karma-jasmine-html-reporter":"^1.4.2","protractor":"~5.4.2","scania-theme":"next","ts-node":"~8.3.0","tslint":"~5.18.0","typescript":"3.4.5"}};
 
 /***/ }),
 
@@ -301,8 +330,11 @@ HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-home',
         template: `
+  <div class="container">
     <h1>Home</h1>
-    <p>Some text goes here</p>
+    <h3>Visit Scania Digital Design System at <a target='_blank' href='https://digitaldesign.scania.com'>digitaldesign.scania.com</a><c-icon name='scania-external_link'></c-icon></h3>
+    <p>Developing in our design system visit our <a target='_blank' href='https://github.com/scania/corporate-ui'>github</a><c-icon name='scania-external_link'></c-icon></p>
+  </div>
   `
     })
 ], HomeComponent);
@@ -820,7 +852,7 @@ Object(corporate_ui__WEBPACK_IMPORTED_MODULE_4__["addTheme"])(scania_theme__WEBP
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\eyuz78\development\cui-demo\corporate-ui-angular\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Dev\corporate-ui-angular\src\main.ts */"./src/main.ts");
 
 
 /***/ })
