@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c_icon", function() { return Icon; });
 /* harmony import */ var _core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-dafe424f.js */ "./node_modules/corporate-ui/dist/esm/core-dafe424f.js");
-/* harmony import */ var _themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-9950d74a.js */ "./node_modules/corporate-ui/dist/esm/themeStyle-9950d74a.js");
+/* harmony import */ var _themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-1eba4ba6.js */ "./node_modules/corporate-ui/dist/esm/themeStyle-1eba4ba6.js");
 
 
 
@@ -22,11 +22,20 @@ const Icon = class {
         this.currentTheme = { icons: {}, components: [] };
         this.ContextStore = Object(_core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__["c"])(this, "store");
     }
-    setTheme() {
-        this.theme = this.store.getState().theme.current;
+    setTheme(name = undefined) {
+        this.theme = name || this.store.getState().theme.current;
+        this.currentTheme = this.store.getState().theme.items[this.theme];
+        // If no theme is used then we return;
+        if (!name)
+            return;
+        // Only setIcons when there is a theme
         this.setIcon();
     }
     setIcon(name = this.name) {
+        if (!this.store.getState().theme.items[this.theme]) {
+            console.warn('No icons in this packages');
+            return;
+        }
         const items = this.store.getState().theme.items[this.theme].icons;
         // TODO: We should have the default icon being a simple
         // square instead of first icon in the collection
@@ -36,11 +45,10 @@ const Icon = class {
         this.store = this.ContextStore || window.CorporateUi.store;
         this.theme = this.store.getState().theme.current;
         this.currentTheme = this.store.getState().theme[this.theme];
-        this.setIcon();
         this.store.subscribe(() => {
             this.theme = this.store.getState().theme.current;
             this.currentTheme = this.store.getState().theme[this.theme];
-            Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
+            Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
         });
         if (!(this.el && this.el.nodeName))
             return;
@@ -48,11 +56,11 @@ const Icon = class {
     }
     componentDidLoad() {
         this.style = this.el.shadowRoot['adoptedStyleSheets'] || [];
-        Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
+        Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
     }
     render() {
         return [
-            Object(_core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__["h"])("svg", { xmlns: 'http://www.w3.org/2000/svg', viewBox: `0 0 ${this.icon.width} ${this.icon.height}` }, Object(_core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__["h"])("path", { fill: 'currentColor', d: this.icon.definition })),
+            Object(_core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__["h"])("svg", { xmlns: 'http://www.w3.org/2000/svg', viewBox: `0 0 ${this.icon ? this.icon.width : '0'} ${this.icon ? this.icon.height : '0'}` }, Object(_core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__["h"])("path", { fill: 'currentColor', d: this.icon ? this.icon.definition : '' })),
         ];
     }
     get el() { return Object(_core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__["g"])(this); }

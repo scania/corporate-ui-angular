@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c_navigation", function() { return Navigation; });
 /* harmony import */ var _core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-dafe424f.js */ "./node_modules/corporate-ui/dist/esm/core-dafe424f.js");
-/* harmony import */ var _themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-9950d74a.js */ "./node_modules/corporate-ui/dist/esm/themeStyle-9950d74a.js");
+/* harmony import */ var _themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-1eba4ba6.js */ "./node_modules/corporate-ui/dist/esm/themeStyle-1eba4ba6.js");
 
 
 
@@ -79,7 +79,7 @@ const Navigation = class {
             this.navigationOpen = this.store.getState().navigation.open;
             this.navigationExpanded = this.store.getState().navigation.expanded;
             this.setTheme();
-            Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
+            Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
         });
         if (!(this.el && this.el.nodeName))
             return;
@@ -112,7 +112,7 @@ const Navigation = class {
     }
     componentDidLoad() {
         this.style = this.el.shadowRoot['adoptedStyleSheets'] || [];
-        Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
+        Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
     }
     parse(items) {
         return Array.isArray(items) ? items : JSON.parse(items || '[]');

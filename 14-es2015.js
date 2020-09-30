@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c_table", function() { return TableComponent; });
 /* harmony import */ var _core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-dafe424f.js */ "./node_modules/corporate-ui/dist/esm/core-dafe424f.js");
-/* harmony import */ var _themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-9950d74a.js */ "./node_modules/corporate-ui/dist/esm/themeStyle-9950d74a.js");
+/* harmony import */ var _themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-1eba4ba6.js */ "./node_modules/corporate-ui/dist/esm/themeStyle-1eba4ba6.js");
 
 
 
@@ -48,9 +48,10 @@ const TableComponent = class {
         this.store = this.ContextStore || window.CorporateUi.store;
         this.theme = this.store.getState().theme.current;
         this.currentTheme = this.store.getState().theme[this.theme];
+        this.setTheme(this.theme);
         this.store.subscribe(() => {
             this.setTheme();
-            Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
+            Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
         });
         if (!(this.el && this.el.nodeName))
             return;
@@ -58,14 +59,14 @@ const TableComponent = class {
     }
     componentDidLoad() {
         this.style = this.el.shadowRoot['adoptedStyleSheets'] || [];
-        Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
+        Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
     }
     /* Filter the content that will show on the table */
     filterContent() {
         var props = this.header.map(a => a.key);
         var keys = Object.keys(Object.assign({}, this.content[0]));
         /* needs clone the array this way to no mutate the content Prop */
-        this.data = this.content.map((item) => Object.assign({}, item));
+        this.data = this.content.map((item) => Object.assign({}, this.flattenObject(item)));
         keys = keys.filter(function (val) {
             return props.indexOf(val) == -1;
         });
@@ -81,7 +82,7 @@ const TableComponent = class {
     sortData(key, direction) {
         /* Needs to reset the Prop to make the changes */
         this.filteredData = [...this.filteredData];
-        const input = (this.el.shadowRoot || this.el).querySelector('#' + direction + key);
+        const input = (this.el.shadowRoot || this.el).getElementById(direction + key);
         /* If clicks on an active button, just remove the active */
         if (input.classList.contains("sort-active")) {
             this.filteredData.sort();
@@ -109,7 +110,7 @@ const TableComponent = class {
         let items = this.filteredData;
         for (const key of keys) {
             const inputId = "search" + key;
-            let inputValue = (this.el.shadowRoot || this.el).querySelector('#' + inputId).value;
+            let inputValue = (this.el.shadowRoot || this.el).getElementById(inputId).value;
             if (inputValue) {
                 /* Gets all values from column */
                 const column = items.map(cl => cl[key]);
@@ -157,6 +158,27 @@ const TableComponent = class {
             this.optEdit.emit(obj);
         if (event === "delete")
             this.optDelete.emit(obj);
+    }
+    /* Flatten objects in order to match it's keys by path */
+    /* Eg: { "address": { "city": "Sydney" } } becomes { "address.city": "Sydney" }*/
+    flattenObject(obj) {
+        let toReturn = {};
+        for (var i in obj) {
+            if (!obj.hasOwnProperty(i))
+                continue;
+            if ((typeof obj[i]) == 'object' && obj[i] !== null) {
+                var flatObject = this.flattenObject(obj[i]);
+                for (var x in flatObject) {
+                    if (!flatObject.hasOwnProperty(x))
+                        continue;
+                    toReturn[i + '.' + x] = flatObject[x];
+                }
+            }
+            else {
+                toReturn[i] = obj[i];
+            }
+        }
+        return toReturn;
     }
     //
     render() {

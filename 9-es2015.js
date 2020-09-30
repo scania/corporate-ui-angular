@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c_header", function() { return Header; });
 /* harmony import */ var _core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-dafe424f.js */ "./node_modules/corporate-ui/dist/esm/core-dafe424f.js");
-/* harmony import */ var _themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-9950d74a.js */ "./node_modules/corporate-ui/dist/esm/themeStyle-9950d74a.js");
+/* harmony import */ var _themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-1eba4ba6.js */ "./node_modules/corporate-ui/dist/esm/themeStyle-1eba4ba6.js");
 
 
 
@@ -44,7 +44,7 @@ const Header = class {
         this.store.subscribe(() => {
             this.setTheme();
             this.navigationOpen = this.store.getState().navigation.open;
-            Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
+            Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
         });
         this.hasNav = !!document.querySelector('c-navigation');
         // To make sure navigation is always hidden from start
@@ -55,7 +55,7 @@ const Header = class {
     }
     componentDidLoad() {
         this.style = this.el.shadowRoot['adoptedStyleSheets'] || [];
-        Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
+        Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
     }
     combineClasses(classes) {
         return [

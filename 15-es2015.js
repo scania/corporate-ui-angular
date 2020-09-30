@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-dafe424f.js */ "./node_modules/corporate-ui/dist/esm/core-dafe424f.js");
 
 
-var version = "4.1.2-1";
+var version = "4.1.2";
 
 const Theme = class {
     constructor(hostRef) {
@@ -57,10 +57,13 @@ const Theme = class {
         this.tagName = this.el.nodeName.toLowerCase();
     }
     render() {
-        if (this.currentTheme['version'] !== undefined) {
-            document.documentElement.setAttribute(`${this.name}-theme-version`, `${this.currentTheme['version']}`);
+        if (this.currentTheme !== undefined && this.currentTheme['version'] !== undefined) {
+            document.documentElement.setAttribute(`theme`, `${this.name}-theme v${this.currentTheme['version']}`);
         }
-        if (this.favicons && this.favicons) {
+        else {
+            document.documentElement.setAttribute(`theme`, '-');
+        }
+        if (this.favicons) {
             this.renderFavicon();
         }
         return [

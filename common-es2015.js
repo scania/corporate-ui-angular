@@ -1,8 +1,8 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"],{
 
-/***/ "./node_modules/corporate-ui/dist/esm/themeStyle-9950d74a.js":
+/***/ "./node_modules/corporate-ui/dist/esm/themeStyle-1eba4ba6.js":
 /*!*******************************************************************!*\
-  !*** ./node_modules/corporate-ui/dist/esm/themeStyle-9950d74a.js ***!
+  !*** ./node_modules/corporate-ui/dist/esm/themeStyle-1eba4ba6.js ***!
   \*******************************************************************/
 /*! exports provided: t */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -11,11 +11,18 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return themeStyle; });
 function themeStyle(currentTheme, tagName, styleThis, el) {
-    const css = currentTheme ? currentTheme.components[tagName] : '';
+    /*
+      Helper function that will appened a stylesheet with scoped styling for specific component
+      either in the shadowRoot with adoptedStyleSheet API
+      or with a fallback method (IE,Old edge and so on)
+    */
     let style;
-    if (!styleThis)
+    const css = currentTheme ? currentTheme.components[tagName] : '';
+    // Fallback for currentTheme, initially empty or the currentTheme doesn't contain a version property
+    if (!currentTheme || !currentTheme.version || !styleThis) {
         return;
-    // This is used by browsers with support for shadowdom
+    }
+    // If the browser has support for adoptedStyleSheet (Chromium)
     if (el.shadowRoot.adoptedStyleSheets) {
         style = new CSSStyleSheet();
         style.replaceSync(css);
@@ -23,6 +30,7 @@ function themeStyle(currentTheme, tagName, styleThis, el) {
         el.shadowRoot.adoptedStyleSheets = [el.shadowRoot.adoptedStyleSheets[0], style];
     }
     else {
+        // Fallback for browsers without adoptedStyleSheet API suppport
         const node = el.shadowRoot || el;
         style = el.querySelector('#themeStyle') || document.createElement('style');
         // style.appendChild(document.createTextNode(css));

@@ -11,7 +11,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c_navigation", function() { return Navigation; });
 /* harmony import */ var _core_dafe424f_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-dafe424f.js */ "./node_modules/corporate-ui/dist/esm-es5/core-dafe424f.js");
-/* harmony import */ var _themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-9950d74a.js */ "./node_modules/corporate-ui/dist/esm-es5/themeStyle-9950d74a.js");
+/* harmony import */ var _themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./themeStyle-1eba4ba6.js */ "./node_modules/corporate-ui/dist/esm-es5/themeStyle-1eba4ba6.js");
 var __spreadArrays = (undefined && undefined.__spreadArrays) || function () {
     for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
     for (var r = Array(s), k = 0, i = 0; i < il; i++)
@@ -87,7 +87,7 @@ var Navigation = /** @class */ (function () {
             _this.navigationOpen = _this.store.getState().navigation.open;
             _this.navigationExpanded = _this.store.getState().navigation.expanded;
             _this.setTheme();
-            Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(_this.currentTheme, _this.tagName, _this.style, _this.el);
+            Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(_this.currentTheme, _this.tagName, _this.style, _this.el);
         });
         if (!(this.el && this.el.nodeName))
             return;
@@ -121,7 +121,7 @@ var Navigation = /** @class */ (function () {
     };
     Navigation.prototype.componentDidLoad = function () {
         this.style = this.el.shadowRoot['adoptedStyleSheets'] || [];
-        Object(_themeStyle_9950d74a_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
+        Object(_themeStyle_1eba4ba6_js__WEBPACK_IMPORTED_MODULE_1__["t"])(this.currentTheme, this.tagName, this.style, this.el);
     };
     Navigation.prototype.parse = function (items) {
         return Array.isArray(items) ? items : JSON.parse(items || '[]');
