@@ -10,5 +10,5 @@ import { Component, Injectable } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'Corporate UI Angular';
+
 }
